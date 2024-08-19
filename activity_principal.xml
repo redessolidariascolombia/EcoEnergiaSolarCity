@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Principal">
+
+    <!--Header-->
+    <LinearLayout
+        android:id="@+id/imageViewTop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewTopTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_margin="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/header" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:orientation="horizontal"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp">
+
+            <Button
+                android:id="@+id/btnSitio"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="Sitios"
+                android:backgroundTint="#009975"
+                app:icon="@android:drawable/ic_menu_sort_by_size" />
+            <Button
+                android:id="@+id/btnCategoria"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:backgroundTint="#009975"
+                android:text="Categorias"
+                app:icon="@android:drawable/ic_menu_sort_by_size" />
+        </LinearLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:orientation="horizontal"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp">
+            <Button
+                android:id="@+id/btnEstadistica"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:backgroundTint="#009975"
+                android:text="Estadistica"
+                app:icon="@android:drawable/ic_menu_preferences" />
+            <Button
+                android:id="@+id/btnConsejo"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:backgroundTint="#009975"
+                android:text="Consejos"
+                app:icon="@android:drawable/ic_menu_day" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--ScrollView Principal-->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewTop"
+        app:layout_constraintBottom_toTopOf="@id/imageViewFoot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registro de Cargas"
+                android:textAlignment="textEnd"
+                android:textColor="#009975"
+                android:textSize="20sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/date_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set the Date"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="vertical"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp">
+                <!-- Agregar CalendarView to mostrar el Calendario -->
+                <CalendarView
+                    android:id="@+id/calendar"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginLeft="19dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </CalendarView>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/imageViewFoot"
+        android:layout_width="match_parent"
+        android:layout_height="80sp"
+        android:layout_marginTop="650dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewFooter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/footer" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
